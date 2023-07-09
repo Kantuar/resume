@@ -1,0 +1,151 @@
+<div>
+    {{#with person}}
+    <section>
+        {{> title data='Характеристика' big=true}}
+        <hr>
+        <div>
+            <h2>
+                {{name}}
+            </h2>
+        </div>
+        <br>
+        <div>
+            Вік: {{age}}
+        </div>
+        <br>
+        <div>
+            Стать: {{gender}}
+        </div>
+        <br>
+        <div>
+            {{#with address}}
+            Адреса: {{country}}, {{state}}, {{city}}, {{zip}}, {{street}}
+            {{/with}}
+        </div>
+    </section>
+    <hr>
+    <section>
+        {{> title data='Освіта' big=true}}
+        <ul>
+            {{#each education}}
+            <li>
+                Місце навчання: {{university}} (рік завершення - {{graduationYear}})
+            </li>
+            <br>
+            <li>
+                Спеціальність: {{major}}
+            </li>
+            <br>
+            <li>
+                Освітній ступінь: {{degree}}
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+    <hr>
+    <section>
+        {{> title data='Досвід роботи' big=true}}
+        <ul>
+            {{#each workExperience}}
+            <li>Компанія: {{company}} ({{year_founded}})</li>
+            <br>
+            <li>Посада: {{title}}</li>
+            <br>
+            <li>Час роботи: {{startDate}} - {{endDate}}</li>
+            <br>
+            <li>Обов'язки: <p>{{responsibilities}}</p>
+        </ul>
+    </section>
+    <hr>
+    <section>
+        {{> title data='Дані про роботодавця та команду' big=true}}
+        <ul>
+            {{#each employees}}
+            <li>
+                <div>
+                    <strong>Роботодавець</strong>
+                </div>
+                <br>
+                <div>{{name}}</div>
+                <br>
+                <div>{{position}}</div>
+                <br>
+                <div>{{department}}</div>
+            </li>
+            <hr>
+            <li>
+                <div>
+                    <strong>Проекти</strong>
+                </div>
+                <br>
+                <div>
+                    {{#each projects}}
+                    <div>
+                        назва: {{name}} - ({{status}})
+                    </div>
+                    <p>
+                        опис: {{description}}
+                    </p>
+            </li>
+            <hr>
+            <li>
+                <div>
+                    <strong>Команда</strong>
+                </div>
+                <br>
+                {{#each teams}}
+                <div>
+                    Назва команди: {{team_name}}
+                </div>
+                <br>
+                {{#each team_members}}
+                <div>Учасник: {{name}}</div>
+                <br>
+                <div>Посада: {{title}}</div>
+                <br>
+                <div>Пошта: {{email}}</div>
+                <br>
+                <div>Навички:
+                    {{#each skills}}
+                    {{this}}
+                    {{/each}}
+                </div>
+                <div>
+                    <p><em>Проекти учасника:</em></p>
+                    {{#each projects}}
+            <li>Назва: {{name}}</li>
+            <br>
+            <li>Опис: {{description}}</li>
+            <br>
+            <li>Технології:
+                {{#each technologies}}
+                {{this}}
+                {{/each}}
+            </li>
+            <li>
+                <p>Інші учасники проекту:</p>
+                {{#each team_members}}
+            <li>
+                <p>{{name}}, {{title}}</p>
+            </li>
+            {{/each}}
+            </li>
+</div>
+{{/each}}
+</div>
+{{/each}} <div>
+</div>
+{{/each}}
+{{/each}}
+</div>
+</li>
+</ul>
+</section>
+<section>
+</section>
+{{/each}}
+</ul>
+{{/each}}
+</section>
+{{/with}}
+</div>
