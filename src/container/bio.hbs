@@ -1,0 +1,154 @@
+<div>
+    <section>
+        {{> title data='Характеристика' big=true}}
+        <hr>
+        <div>
+            <h2> {{name}}</h2>
+        </div>
+        <div>
+            <b>Дата народження:</b> {{birthdate}} ({{birthplace}})
+        </div>
+        <br>
+        <div>
+            <b>Дата смерті:</b> {{deathdate}} ({{deathplace}})
+        </div>
+        <br>
+        <div>
+            <b>Національність:</b> {{nationality}}
+        </div>
+        <br>
+        <div>
+            <b>Професія:</b> {{occupation}}
+        </div>
+        <br>
+        <b>Відомий завдяки:</b>
+        <ul>
+            {{#each known_for}}
+            <li>{{this}} </li>
+            {{/each}}
+        </ul>
+    </section>
+    <hr>
+    <section>
+        {{> title data='Освіта та наукова діяльність' big=true}}
+        <p><b>Науковий ступінь:</b>
+            {{education.[0].degree}}</p>
+        <p><b>Спеціальність:</b>
+            {{education.[0].field}}</p>
+        <p><b>Освітній заклад:</b>
+            {{education.[0].institution}} ({{education.[0].year}})</p>
+
+        <div>
+            <div>
+                <strong>Визначні публікації</strong>
+            </div>
+            <ul>
+                {{#each notable_publications}}
+                <li>{{title}} ({{year}}) - {{publisher}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div>
+            <div>
+                <strong>Нагороди</strong>
+            </div>
+            <ul>
+                <li>
+                    <p><b>Назва:</b>
+                        {{awards.[0].title}} ({{awards.[0].year}})</p>
+                </li>
+                <li>
+                    <p><b>Опис:</b>
+                        {{awards.[0].description}}</p>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div>
+                <strong>Головні відкриття</strong>
+            </div>
+            <ul>
+                <li>
+                    <p><b>Назва:</b>
+                        {{major_discoveries.[0].title}} ({{major_discoveries.[0].year}})</p>
+                </li>
+                <li>
+                    <p><b>Опис:</b>
+                        {{major_discoveries.[0].description}}</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+    <section>
+        {{> title data='Особисте життя та світовий внесок' big=true}}
+        <div>
+            <div>
+                <strong>Жінки:</strong>
+            </div>
+            <ul>
+                {{#each partners}}
+                <li>{{name}} - {{relationship}} ({{years}})</li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <div>
+            <div>
+                <strong>Надихався...</strong>
+            </div>
+            <ul>
+                {{#each influences}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div>
+            <div>
+                <strong>Став натхненням для...</strong>
+            </div>
+            <ul>
+                {{#each influenced}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div>
+            <div>
+                <strong>Цитати:</strong>
+            </div>
+            <ul>
+                {{#each quotes}}
+                <li>
+                    <p>{{this}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div>
+            <div>
+                <strong>Внески:</strong>
+            </div>
+            <ul>
+                {{#with contributions}}
+                <li>
+                    <b>Область:</b>
+                    {{title}}
+                </li>
+                <br>
+                <li>
+                    <b>Опис:</b>
+                    {{description}}
+                </li>
+                <br>
+                <li>
+                    <b>Рік:</b>
+                    {{year}}
+                </li>
+                {{/with}}
+            </ul>
+        </div>
+    </section>
+
+    </section>
+</div>
