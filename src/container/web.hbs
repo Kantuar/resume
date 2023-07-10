@@ -1,6 +1,36 @@
 <div>
+    {{> title data='Інструменти в програмуванні' big=true}}
+    <hr>
+    {{#with web}}
     <section>
-        {{> title data='Характеристика' big=true}}
+        <div>
+            <strong>
+                {{languages.[0].name}}
+            </strong>
+        </div>
+        <br>
+        <div>
+            {{languages.[0].version}}
+        </div>
+        <p>
+            {{languages.[0].description}}
+        </p>
+
+        <div>
+            {{#each languages}}
+            <p>{{elements.[0].name}}</p>
+            <p>{{elements.[0].description}}</p>
+            {{#each elements}}
+            <p>{{attributes.[0].name}}</p>
+
+            {{/each}}
+            {{/each}}
+        </div>
+
+
+
+
 
     </section>
+    {{/with}}
 </div>
