@@ -1,0 +1,40 @@
+<div>
+    {{#with program}}
+    <section>
+        {{> title data='Характеристика екскурсії' big=true}}
+        <hr>
+        <div>
+            {{#with excursion}}
+            <p>
+                {{name}}
+            </p>
+            {{#with location}}
+            {{city}}, {{country}} ({{../date}})
+            {{/with}}
+        </div>
+    </section>
+    <hr>
+    <section>
+        {{> title data='Програми:' big=true}}
+        <div>
+            <strong>
+                {{program.[0].name}}
+            </strong>
+        </div>
+        <div>
+            <p>Вид:
+                {{program.[0].type}}</p>
+            <p>Тривалість (днів):
+                {{program.[0].duration}}</p>
+            <p> Адреса:
+                {{#with location}}
+                {{city}}, {{country}}
+                {{/with}}</p>
+        </div>
+        <div>
+
+        </div>
+        {{/with}}
+    </section>
+    {{/with}}
+</div>
