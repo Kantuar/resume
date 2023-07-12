@@ -466,7 +466,7 @@ module.exports = router
 
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('program', {
+  res.render('program copy', {
     layout: 'basic',
 
     program: {

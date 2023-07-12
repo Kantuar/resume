@@ -10,6 +10,7 @@
         <p><em>{{description}}</em></p>
     </div>
     <div>
+        <br>
         {{#if elements}}
         <strong>HTML Elements:</strong>
         <ul>
@@ -36,13 +37,14 @@
     </div>
 </div>
 <div>
+    <br>
     {{#if properties}}
     <strong>CSS Properties:</strong>
     <ul>
         {{#each properties}}
         <br>
         <li>
-            <strong>{{name}}</strong>: {{description}}
+            <b>{{name}}</b>: {{description}}
             {{#if values}}
             <ul>
                 <br>
@@ -52,6 +54,7 @@
                 </li>
                 {{/each}}
             </ul>
+            <br>
             {{/if}}
         </li>
         {{/each}}
@@ -62,10 +65,11 @@
     {{#if functions}}
     <strong>JavaScript Functions:</strong>
     <ul>
-        {{#each functions}}
         <br>
+        {{#each functions}}
+
         <li>
-            <strong>{{name}}</strong>: {{description}}
+            <b>{{name}}</b>: {{description}}
             {{#if parameters}}
             <ul>
                 <br>
@@ -75,6 +79,7 @@
                 </li>
                 {{/each}}
             </ul>
+            <br>
             {{/if}}
         </li>
         {{/each}}
