@@ -1,36 +1,86 @@
 <div>
-    {{> title data='Інструменти в програмуванні' big=true}}
-    <hr>
     {{#with web}}
-    <section>
-        <div>
-            <strong>
-                {{languages.[0].name}}
-            </strong>
-        </div>
-        <br>
-        <div>
-            {{languages.[0].version}}
-        </div>
-        <p>
-            {{languages.[0].description}}
-        </p>
-
-        <div>
-            {{#each languages}}
-            <p>{{elements.[0].name}}</p>
-            <p>{{elements.[0].description}}</p>
+    <div>
+        {{> title data='Інструменти в програмуванні' big=true}}
+    </div>
+    <div>
+        {{#each languages}}
+        <hr>
+        <h3>{{name}} ({{version}})</h3>
+        <p><em>{{description}}</em></p>
+    </div>
+    <div>
+        {{#if elements}}
+        <strong>HTML Elements:</strong>
+        <ul>
             {{#each elements}}
-            <p>{{attributes.[0].name}}</p>
+            <br>
+            <li>
+                <strong>{{name}}</strong>: {{description}}
+                <div>
+                    {{#if attributes}}
 
+                    <ul>
+                        <br>
+                        {{#each attributes}}
+                        <li>
+                            <b><em>{{name}}</em></b>: {{description}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+            </li>
             {{/each}}
-            {{/each}}
-        </div>
-
-
-
-
-
-    </section>
-    {{/with}}
+        </ul>
+        {{/if}}
+    </div>
+</div>
+<div>
+    {{#if properties}}
+    <strong>CSS Properties:</strong>
+    <ul>
+        {{#each properties}}
+        <br>
+        <li>
+            <strong>{{name}}</strong>: {{description}}
+            {{#if values}}
+            <ul>
+                <br>
+                {{#each values}}
+                <li>
+                    <b><em>{{value}}</em></b>: {{description}}
+                </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</div>
+<div>
+    {{#if functions}}
+    <strong>JavaScript Functions:</strong>
+    <ul>
+        {{#each functions}}
+        <br>
+        <li>
+            <strong>{{name}}</strong>: {{description}}
+            {{#if parameters}}
+            <ul>
+                <br>
+                {{#each parameters}}
+                <li>
+                    <b><em>{{name}}</b></em>: {{description}}
+                </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</div>
+{{/each}}
+{{/with}}
 </div>
