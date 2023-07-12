@@ -1,60 +1,79 @@
 <div>
-    {{> title data='Характеристика екскурсії' big=true}}
-    <hr>
-    <h2>{{program.excursion.name}}</h2>
-    <p>{{program.excursion.location.city}}, {{program.excursion.location.country}}</p>
-    <p>Date: {{program.excursion.date}}</p>
+    {{#with program}}
+    {{#with excursion}}
+    <div>
+        <h1>{{name}}</h1>
+        {{#with location}}
+        <p>Локація: {{city}}, {{country}}</p>
+        <p>Дата: {{../date}}</p>
+        {{/with}}
+    </div>
+    <div>
+        {{#each program}}
+        <hr>
+        <h2>{{name}}</h2>
+        <p>Тип: {{type}}</p>
+        <p>Тривалість: {{duration}} години</p>
+    </div>
 
-    {{#each program.excursion.program}}
-    <h3>{{name}}</h3>
-    <p>Type: {{type}}</p>
-    <p>Duration: {{duration}} hours</p>
-
-    <h4>Details</h4>
 
     {{#if details.museum}}
-    <h5>Museum</h5>
-    <p>Name: {{details.museum.name}}</p>
-    <p>Location: {{details.museum.location.address}}, {{details.museum.location.city}},
-        {{details.museum.location.country}}
-    </p>
-
-    <h6>Exhibits</h6>
+    <h3>Інформація про музей:</h3>
+    <p>Назва: {{details.museum.name}}</p>
+    <p>Локація: {{details.museum.location.address}}, {{details.museum.location.city}},
+        {{details.museum.location.country}}</p>
+    <h3>Експонати:</h3>
     <ul>
         {{#each details.museum.exhibits}}
         <li>
-            <strong>{{name}}</strong>
-            {{#if artist}}
-            <p>Artist: {{artist}}</p>
+            Назва: <strong>{{name}}</strong>
+
+            <p>Художник:
+                {{#if artist}}
+                {{artist}}
+                {{else}}
+                невідомий</p>
             {{/if}}
-            <p>Description: {{description}}</p>
-            <p>Audio Guide: {{audio_guide}}</p>
+
+            <p>Опис: {{description}}</p>
+
+            <p>Аудіо-гід:
+                {{#if audio_guide}} присутній
+                {{else}} відсутній
+                {{/if}}</p>
         </li>
         {{/each}}
     </ul>
     {{/if}}
 
-    {{#if details.venue}}
-    <h5>Venue</h5>
-    <p>Name: {{details.venue.name}}</p>
-    <p>Location: {{details.venue.location.address}}, {{details.venue.location.city}}, {{details.venue.location.country}}
-    </p>
+    {{#with details}}
+    {{#with venue}}
+    <h3>Деталі:</h3>
+    <p>Місце проведення: {{name}}</p>
+    {{#with location}}
+    <p>Локація: {{address}}, {{city}},{{country}}
+        {{/with}}</p>
+    {{/with}}
 
-    <h6>Performers</h6>
+    <h3>Виконавці:</h3>
     <ul>
-        {{#each details.performers}}
+        {{#each performers}}
         <li>
-            <strong>{{name}}</strong>
-            <p>Type: {{type}}</p>
+            <p>Ім'я: <strong>{{name}}</strong></p>
+            <p>Тип: {{type}}</p>
         </li>
         {{/each}}
     </ul>
-    {{/if}}
+    {{/with}}
 
-    <h5>Guide</h5>
-    <p>Name: {{details.guide.name}}</p>
-    <p>Language: {{details.guide.language}}</p>
-    <p>Rating: {{details.guide.rating}}</p>
+    <h3>Гід:</h3>
 
+
+    <p>Ім'я: {{details.guide.name}}</p>
+    <p>Мова: {{details.guide.language}}</p>
+    <p>Рейтинг: {{details.guide.rating}}</p>
     {{/each}}
+
+    {{/with}}
+    {{/with}}
 </div>
