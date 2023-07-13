@@ -1,0 +1,152 @@
+<div>
+    <section>
+        <h1>{{name}}</h1>
+        <hr>
+        <p>
+            <b>description:</b> {{description}}
+        </p>
+        <p>
+            <b>category:</b> {{category}}
+        </p>
+        <p>
+            <b>price: {{price}} <button type="button" class="btn btn-secondary">Купити</button></b>
+        </p>
+    </section>
+    <hr>
+    <section>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">processor</li>
+                <li class="breadcrumb-item"><a href="#">memory</a></li>
+                <li class="breadcrumb-item"><a href="#">storage</a></li>
+                <li class="breadcrumb-item"><a href="#">display</a></li>
+                <li class="breadcrumb-item"><a href="#">graphics</a></li>
+                <li class="breadcrumb-item"><a href="#">ports</a></li>
+                <li class="breadcrumb-item"><a href="#">battery</a></li>
+                <li class="breadcrumb-item"><a href="#">weight</a></li>
+                <li class="breadcrumb-item"><a href="#">dimensions</a></li>
+                <li class="breadcrumb-item"><a href="#">operating system</a></li>
+                <li class="breadcrumb-item"><a href="#">accessories</a></li>
+
+
+            </ol>
+        </nav>
+        <div>
+            <h2>features</h2>
+        </div>
+        <br>
+        <div>
+            {{#with features}}
+            <ul>
+                {{#with processor}}
+                <li>
+                    <p><strong>processor</strong></p>
+
+                    <p>brand: {{brand}}</p>
+                    <p>model: {{model}}</p>
+                    <p>speed: {{speed}}</p>
+                    <p>cores: {{cores}}</p>
+                    <p>cache: {{cache}}</p>
+                    {{/with}}
+                </li>
+                <li>
+                    {{#with memory}}
+
+                    <p><strong>memory</strong></p>
+
+                    <p>type: {{type}}</p>
+                    <p>size: {{size}}</p>
+                    <p>speed: {{speed}}</p>
+                    {{/with}}
+                </li>
+                <li>
+                    {{#with storage}}
+
+                    <p><strong>storage</strong></p>
+
+                    <p>type: {{type}}</p>
+                    <p>size: {{size}}</p>
+                    {{/with}}
+                </li>
+                <li>
+                    {{#with display}}
+
+                    <p><strong>display</strong></p>
+
+                    <p>size: {{size}}</p>
+                    <p>resolution: {{resolution}}</p>
+                    <p>technology: {{technology}}</p>
+                    <p>color space: {{color_space}}</p>
+                    <p>brightness: {{brightness}}</p>
+                    <p>refresh rate: {{refresh_rate}}</p>
+                    {{/with}}
+                </li>
+                <li>
+                    {{#with graphics}}
+
+                    <p><strong>graphics</strong></p>
+
+                    <p>brand: {{brand}}</p>
+                    <p>model: {{model}}</p>
+                    <p>memory: {{memory}}</p>
+                    {{/with}}
+                </li>
+                <li>
+                    <ul>
+                        <p><strong>ports:</strong></p>
+                        {{#each ports}}
+                        <li>
+                            <p>type: {{type}}</p>
+                            <p>count: {{count}}</p>
+                            <p>features:
+                                {{#each features}}
+                                {{this}},
+                                {{/each}}
+                            </p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </li>
+                <li>
+                    {{#with battery}}
+
+                    <p><strong>battery</strong></p>
+
+                    <p>type: {{type}}</p>
+                    <p>capacity: {{capacity}}</p>
+                    <p>life: {{life}}</p>
+                    {{/with}}
+                </li>
+                <li>
+                    <p><strong>weight: </strong>{{weight}}</p>
+                </li>
+                <li>
+                    {{#with dimensions}}
+
+                    <p><strong>dimensions</strong></p>
+
+                    <p>height: {{height}}</p>
+                    <p>width: {{width}}</p>
+                    <p>depth: {{depth}}</p>
+                    {{/with}}
+                </li>
+                <li>
+                    <p><strong>operating system: </strong>{{operating_system}}</p>
+                </li>
+                <li>
+                    <ul>
+                        <p><strong>accessories: </strong></p>
+                        {{#each accessories}}
+                        <li>
+                            <p>{{name}} ({{price}}) <button type="button"
+                                    class="btn btn-outline-secondary">Купити</button></p>
+
+                        </li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/with}}
+            </ul>
+        </div>
+    </section>
+</div>
