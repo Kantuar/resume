@@ -1,0 +1,252 @@
+<div>
+    <section>
+        <h1>{{color}} {{make}} {{model}} ({{year}})</h1>
+        <hr>
+    </section>
+    <section>
+        <div>
+            <h2><mark>features</mark></h2>
+        </div>
+        <hr>
+        {{#with features}}
+        <div>
+            <button type="button" class="btn btn-warning">interior</button>
+        </div>
+        <br>
+        <div>
+            {{#with interior}}
+            <ul>
+                {{#with seats}}
+                <li>
+                    <p><strong>seats:</strong></p>
+
+                    <p>material: {{material}}</p>
+                    <p>color: {{color}}</p>
+                    <p>heated:
+                        {{#if heated}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}</p>
+                    <p>ventilated:
+                        {{#if ventilated}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}</p>
+                </li>
+                {{/with}}
+            </ul>
+            <ul>
+                {{#with dashboard}}
+                <li>
+                    <p><b>dashboard:</b></p>
+
+                    <p>material: {{material}}</p>
+                    <p>color: {{color}}</p>
+                    <p>display:
+                    <ul>
+                        {{#with display}}
+                        <li>{{type}},</li>
+                        <li>{{size}},</li>
+                        <li>{{resolution}},</li>
+                        <li>{{#if touchscreen}} <em>в наявності</em>
+                            {{else}} <em>немає в наявності</em>
+                            {{/if}}</li>
+                        {{/with}}
+                    </ul>
+                </li>
+                {{/with}}
+            </ul>
+            <ul>
+                {{#with audio}}
+                <li>
+                    <p><b>audio:</b></p>
+
+                    <p>system: {{system}}</p>
+                    <p>speakers: {{speakers}}</p>
+                    <p>subwoofer:
+                        {{#if subwoofer}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}</p>
+                    <p>bluetooth:
+                        {{#if bluetooth}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}</p>
+                    <p>USB:
+                        {{#if USB}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}</p>
+                </li>
+                {{/with}}
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            <div>
+                <button type="button" class="btn btn-warning">exterior</button>
+            </div>
+            <br>
+            {{#with exterior}}
+            <ul>
+                {{#with wheels}}
+                <li>
+                    <p><strong>wheels:</strong></p>
+
+                    <p>size: {{size}}</p>
+                    <p>type: {{type}}</p>
+                    <p>color: {{color}}</p>
+                </li>
+                {{/with}}
+            </ul>
+            <ul>
+                {{#with headlights}}
+                <li>
+                    <p><strong>headlights:</strong></p>
+
+                    <p>type: {{type}}</p>
+                    <p>brightness: {{brightness}}</p>
+                    <p>automatic:
+                        {{#if automatic}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}
+                    </p>
+                </li>
+                {{/with}}
+            </ul>
+            <ul>
+                {{#with sunroof}}
+                <li>
+                    <p><strong>sunroof:</strong></p>
+
+                    <p>type: {{type}}</p>
+                    <p>size: {{size}}</p>
+                    <p>automatic:
+                        {{#if automatic}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}
+                    </p>
+                </li>
+                {{/with}}
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            <div>
+                <button type="button" class="btn btn-warning">safety</button>
+            </div>
+            <br>
+            {{#with safety}}
+            <ul>
+                {{#with airbags}}
+                <li>
+                    <p><strong>airbags:</strong></p>
+
+                    <p>front: {{front}}</p>
+                    <p>side: {{side}}</p>
+                    <p>knee: {{knee}}</p>
+                    <p>rear: {{rear}}</p>
+                </li>
+                {{/with}}
+            </ul>
+            <ul>
+                {{#with assistance}}
+                <li>
+                    <p><strong>assistance:</strong></p>
+
+                    <p>blind spot monitoring:
+                        {{#if blind_spot_monitoring}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}
+                    </p>
+                    <p>rear cross traffic alert:
+                        {{#if rear_cross_traffic_alert}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}
+                    </p>
+                    <p>lane departure warning:
+                        {{#if lane_departure_warning}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}
+                    </p>
+                    <p>adaptive cruise control:
+                        {{#if adaptive_cruise_control}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}
+                    </p>
+                    <p>collision warning:
+                        {{#if collision_warning}} <em>в наявності</em>
+                        {{else}} <em>немає в наявності</em>
+                        {{/if}}
+                    </p>
+                </li>
+                {{/with}}
+            </ul>
+            {{/with}}
+        </div>
+        {{/with}}
+    </section>
+    <hr>
+    <section>
+        <div>
+            <h2><mark>engine</mark></h2>
+        </div>
+        <hr>
+        <div>
+            {{#with engine}}
+
+            <p>type: {{type}}</p>
+            <p>displacement: {{displacement}}</p>
+            <p>horsepower: {{horsepower}}</p>
+            <p>torque: {{torque}}</p>
+            <p>torque:
+                {{#with transmission}}
+            <p>type: {{type}}</p>
+            <p>gears: {{gears}}</p>
+            {{/with}}</p>
+
+            {{/with}}
+
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div>
+            <h2><mark>fuel economy</mark></h2>
+        </div>
+        <hr>
+        <div>
+            {{#with fuel_economy}}
+            <p>city: {{city}}</p>
+            <p>highway: {{highway}}</p>
+            <p>combined: {{combined}}</p>
+            {{/with}}
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div>
+            <h2><mark>price</mark></h2>
+        </div>
+        <hr>
+        <div>
+            {{#with price}}
+            <p>base: {{base}}</p>
+            <p>destination: {{destination}}</p>
+            <p>options:
+            <ul>
+                {{#with options}}
+                <li>
+                    <p>navigation: {{navigation}}</p>
+                </li>
+                <li>
+                    <p>moonroof: {{moonroof}}</p>
+                </li>
+                <li>
+                    <p>premium paint: {{premium_paint}}</p>
+                </li>
+                </li>
+                {{/with}}
+            </ul>
+            </p>
+            <p><strong>total: {{total}}</strong></p>
+            {{/with}}
+        </div>
+    </section>
+</div>
