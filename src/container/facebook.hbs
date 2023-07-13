@@ -1,0 +1,62 @@
+<div>
+    <section>
+        <div>
+            <h1>{{name}}</h1>
+        </div>
+
+        {{#each users}}
+        <div>
+            <hr>
+            <p>
+            <h3>users:</h3>
+            </p>
+            <p><b>id:</b> {{id}}</p>
+            <p><b>name:</b> {{name}} ({{age}})</p>
+            <p><b>gender:</b> {{gender}}</p>
+            <ul>
+                {{#each friends}}
+                <li>
+                    <button type="button" class="btn btn-primary">friends</button>
+                    <p><b>id:</b> {{id}}</p>
+                    <p><b>name:</b> {{name}} ({{age}})</p>
+                    <p><b>gender:</b> {{gender}}</p>
+                    <ul>
+                        {{#each mutual_friends}}
+                        <li>
+                            <button type="button" class="btn btn-outline-primary">mutual friends</button>
+                            <p><b>id:</b> {{id}}</p>
+                            <p><b>name:</b> {{name}} ({{age}})</p>
+                            <p><b>gender:</b> {{gender}}</p>
+                        </li>
+                        {{/each}}
+                    </ul>
+
+                    <ul>
+                        {{#each groups}}
+                        <li>
+                            <button type="button" class="btn btn-success">groups</button>
+                            <p><b>id:</b> {{id}}</p>
+                            <p><b>name:</b> {{name}}</p>
+                            <p><b>description:</b> {{description}}</p>
+                            <ul>
+                                {{#each members}}
+                                <li>
+                                    <button type="button" class="btn btn-outline-success">members</button>
+                                    <p><b>id:</b> {{id}}</p>
+                                    <p><b>name:</b> {{name}} ({{age}})</p>
+                                    <p><b>gender:</b> {{gender}}</p>
+                                </li>
+                                {{/each}}
+                            </ul>
+                            </p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    </p>
+                </li>
+                {{/each}}</p>
+            </ul>
+        </div>
+        {{/each}}
+    </section>
+</div>
