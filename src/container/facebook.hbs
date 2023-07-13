@@ -7,46 +7,45 @@
         {{#each users}}
         <div>
             <hr>
-            <p><b>users:</b></p>
-
-
-            <p>id: {{id}}</p>
-            <p>name: {{name}} ({{age}})</p>
-            <p>gender: {{gender}}</p>
-            <p>name:
+            <p>
+            <h3>users:</h3>
+            </p>
+            <p><b>id:</b> {{id}}</p>
+            <p><b>name:</b> {{name}} ({{age}})</p>
+            <p><b>gender:</b> {{gender}}</p>
             <ul>
-                <p><b>friends:</b></p>
                 {{#each friends}}
                 <li>
-                    <p>id: {{id}}</p>
-                    <p>name: {{name}} ({{age}})</p>
-                    <p>gender: {{gender}}</p>
-                    <p><em>mutual friends:</em>
+                    <button type="button" class="btn btn-primary">friends</button>
+                    <p><b>id:</b> {{id}}</p>
+                    <p><b>name:</b> {{name}} ({{age}})</p>
+                    <p><b>gender:</b> {{gender}}</p>
                     <ul>
                         {{#each mutual_friends}}
                         <li>
-                            <p>id: {{id}}</p>
-                            <p>name: {{name}} ({{age}})</p>
-                            <p>gender: {{gender}}</p>
+                            <button type="button" class="btn btn-outline-primary">mutual friends</button>
+                            <p><b>id:</b> {{id}}</p>
+                            <p><b>name:</b> {{name}} ({{age}})</p>
+                            <p><b>gender:</b> {{gender}}</p>
                         </li>
                         {{/each}}
                     </ul>
-                    <p><em>groups:</em>
+
                     <ul>
                         {{#each groups}}
                         <li>
-                            <p>id: {{id}}</p>
-                            <p>name: {{name}}</p>
-                            <p>description: {{description}}</p>
-                            <p>members:
+                            <button type="button" class="btn btn-success">groups</button>
+                            <p><b>id:</b> {{id}}</p>
+                            <p><b>name:</b> {{name}}</p>
+                            <p><b>description:</b> {{description}}</p>
                             <ul>
                                 {{#each members}}
                                 <li>
-                                    <p>id: {{id}}</p>
-                                    <p>name: {{name}} ({{age}})</p>
-                                    <p>gender: {{gender}}</p>
+                                    <button type="button" class="btn btn-outline-success">members</button>
+                                    <p><b>id:</b> {{id}}</p>
+                                    <p><b>name:</b> {{name}} ({{age}})</p>
+                                    <p><b>gender:</b> {{gender}}</p>
                                 </li>
-
                                 {{/each}}
                             </ul>
                             </p>
@@ -55,8 +54,6 @@
                     </ul>
                     </p>
                 </li>
-
-                {{afafasf}}
                 {{/each}}</p>
             </ul>
         </div>
