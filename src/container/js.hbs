@@ -1,12 +1,32 @@
 <div>
-    {{name}}
-    <p>{{description}}</p>
-    <p>History:
-        {{#with history}}
-        {{year}}, {{founder}}
-        {{/with}}
-    </p>
-    <div>types:
+    <div>
+        <h2>{{name}}</h2>
+    </div>
+    <hr>
+    <div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Description</a></li>
+                <li class="breadcrumb-item"><a href="#">Types</a></li>
+                <li class="breadcrumb-item"><a href="#">Syntax</a></li>
+                <li class="breadcrumb-item"><a href="#">Features</a></li>
+                <li class="breadcrumb-item"><a href="#">Libraries</a></li>
+                <li class="breadcrumb-item"><a href="#">Tools</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Community</li>
+            </ol>
+        </nav>
+    </div>
+    <div>
+        <p><b>Description:</b>
+            {{description}}</p>
+        <p><b>History:</b>
+            {{#with history}}
+            {{year}}, {{founder}}
+            {{/with}}
+        </p>
+    </div>
+    <div>
+        <button type="button" class="btn btn-dark">Types</button>
         <ul>
             {{#each types}}
             <li>
@@ -15,7 +35,8 @@
             {{/each}}
         </ul>
     </div>
-    <div>syntax:
+    <div>
+        <button type="button" class="btn btn-dark">Syntax</button>
         <ul>
             {{#with syntax}}
             <li> variables:
@@ -46,28 +67,28 @@
             {{/with}}
         </ul>
     </div>
-    <div>features:
+    <div> <button type="button" class="btn btn-dark">Features</button>
         <ul>
             {{#each features}}
             <li>{{this}}</li>
             {{/each}}
         </ul>
     </div>
-    <div>libraries:
+    <div> <button type="button" class="btn btn-dark">Libraries</button>
         <ul>
             {{#each libraries}}
             <li>{{this}}</li>
             {{/each}}
         </ul>
     </div>
-    <div>tools:
+    <div> <button type="button" class="btn btn-dark">Tools</button>
         <ul>
             {{#each tools}}
             <li>{{this}}</li>
             {{/each}}
         </ul>
     </div>
-    <div>community:
+    <div> <button type="button" class="btn btn-dark">Community</button>
         <ul>
             {{#each community}}
             <li>{{name}}, {{type}}</li>
