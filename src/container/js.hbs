@@ -1,0 +1,77 @@
+<div>
+    {{name}}
+    <p>{{description}}</p>
+    <p>History:
+        {{#with history}}
+        {{year}}, {{founder}}
+        {{/with}}
+    </p>
+    <div>types:
+        <ul>
+            {{#each types}}
+            <li>
+                {{this}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div>syntax:
+        <ul>
+            {{#with syntax}}
+            <li> variables:
+                {{#each variables}}
+                {{this}},
+                {{/each}}
+            </li>
+            <li> functions:
+                {{#each functions}}
+                {{this}}
+                {{/each}}
+            </li>
+            <li>conditionals:
+                {{#each conditionals}}
+                {{this}},
+                {{/each}}
+            </li>
+            <li>loops:
+                {{#each loops}}
+                {{this}},
+                {{/each}}
+            </li>
+            <li>classes:
+                {{#each classes}}
+                {{this}}
+                {{/each}}
+            </li>
+            {{/with}}
+        </ul>
+    </div>
+    <div>features:
+        <ul>
+            {{#each features}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    <div>libraries:
+        <ul>
+            {{#each libraries}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    <div>tools:
+        <ul>
+            {{#each tools}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    <div>community:
+        <ul>
+            {{#each community}}
+            <li>{{name}}, {{type}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
