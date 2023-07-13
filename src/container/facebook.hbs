@@ -1,0 +1,65 @@
+<div>
+    <section>
+        <div>
+            <h1>{{name}}</h1>
+        </div>
+
+        {{#each users}}
+        <div>
+            <hr>
+            <p><b>users:</b></p>
+
+
+            <p>id: {{id}}</p>
+            <p>name: {{name}} ({{age}})</p>
+            <p>gender: {{gender}}</p>
+            <p>name:
+            <ul>
+                <p><b>friends:</b></p>
+                {{#each friends}}
+                <li>
+                    <p>id: {{id}}</p>
+                    <p>name: {{name}} ({{age}})</p>
+                    <p>gender: {{gender}}</p>
+                    <p><em>mutual friends:</em>
+                    <ul>
+                        {{#each mutual_friends}}
+                        <li>
+                            <p>id: {{id}}</p>
+                            <p>name: {{name}} ({{age}})</p>
+                            <p>gender: {{gender}}</p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    <p><em>groups:</em>
+                    <ul>
+                        {{#each groups}}
+                        <li>
+                            <p>id: {{id}}</p>
+                            <p>name: {{name}}</p>
+                            <p>description: {{description}}</p>
+                            <p>members:
+                            <ul>
+                                {{#each members}}
+                                <li>
+                                    <p>id: {{id}}</p>
+                                    <p>name: {{name}} ({{age}})</p>
+                                    <p>gender: {{gender}}</p>
+                                </li>
+
+                                {{/each}}
+                            </ul>
+                            </p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    </p>
+                </li>
+
+                {{afafasf}}
+                {{/each}}</p>
+            </ul>
+        </div>
+        {{/each}}
+    </section>
+</div>
