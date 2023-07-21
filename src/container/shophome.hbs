@@ -1,0 +1,131 @@
+<main>
+    <section class="col-12 row">
+        {{#with navigation}}
+
+        <div class="card">
+            <div class="nav">
+                {{#each links}}
+                <div class="nav-item">
+                    <a href="{{href}}" class="nav-link active">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/with}}
+
+        {{#with newsBlock}}
+        <div>
+            <h2 class="text-center pt-5 pb-3">{{title}}</h2>
+        </div>
+
+
+        {{#each cards}}
+        <div class="col-3 mb-4 ">
+            <div class="card text-bg-dark pb-1">
+                <div class="card-header ">
+                    {{title}}
+                    {{#if isTop}}
+                    <span class="badge text-bg-danger rounded-pill ">Топ</span>
+                    {{/if}}
+                    {{#if isNew}}
+                    <span class="badge text-bg-success rounded-pill ">Нова</span>
+                    {{/if}}
+                </div>
+                <div class="card-body">
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+        {{/with}}
+    </section>
+    <hr>
+    <section class="col-12 row">
+        {{#with goodsBlock}}
+
+        <div class="nav nav-tabs">
+            {{#each tabs}}
+            <div class="nav-item">
+                <a href="#" class="nav-link 
+                {{#if isActive}} active {{/if}} 
+                {{#if isDisabled}} disabled {{/if}}">
+                    {{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+        {{#each cards}}
+
+        <div class="col-4 my-3 gx-2 py-2">
+            <div class="card">
+                <img class="card-img-top" src="{{image}}">
+                <div class="card-body">
+                    <div class="card-title">
+                        {{title}}
+                        {{#if isHot}}
+                        <span class="badge text-bg-warning rounded-pill">Hot</span>
+                        {{/if}}
+                        {{#if isNew}}
+                        <span class="badge text-bg-primary rounded-pill ">New</span>
+                        {{/if}}
+                    </div>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+
+        {{/with}}
+    </section>
+    <hr>
+    <section class="my-4">
+        {{#with subscribe}}
+        <div class="card text-bg-dark p-2">
+            <h2 class="pb-2 ps-1">{{header}}</h2>
+            <p class="ps-1">{{description}}</p>
+
+            {{#each buttons}}
+            <a href="{{link}}">
+                <div class="pb-2 ps-1">
+                    <button class="btn btn btn-primary">{{text}}</button>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+        {{/with}}
+    </section>
+    <hr>
+    <section class="my-4">
+        {{#with service}}
+        <div class="card text-bg-success p-2">
+            <h2 class="text-center">{{title}}</h2>
+            <p class="text-center">{{description}}</p>
+
+            {{#each buttons}}
+            <a href="{{link}}">
+                <div class="pb-2 ps-1 text-center">
+                    <button class="btn btn btn-primary">{{text}}</button>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+        {{/with}}
+    </section>
+    <hr>
+    <section>
+        <div class="col-12 row ">
+            {{#each footer}}
+
+            <div class="nav col-2">
+                {{#each this}}
+                <div class="nav-item">
+                    <a href="{{link}}" class="nav-link active">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+
+            {{/each}}
+        </div>
+    </section>
+</main>
