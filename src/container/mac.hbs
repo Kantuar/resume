@@ -1,5 +1,5 @@
-<div>
-    <section>
+<main>
+    <div>
         <h1>{{name}}</h1>
         <hr>
         <p>
@@ -9,12 +9,12 @@
             <b>category:</b> {{category}}
         </p>
         <p>
-            <b>price: {{price}} <button type="button" class="btn btn-secondary">Купити</button></b>
+            <b>price: {{price}}</b>
         </p>
-    </section>
+    </div>
     <hr>
-    <section>
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <div>
+        <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">processor</li>
                 <li class="breadcrumb-item"><a href="#">memory</a></li>
@@ -27,8 +27,6 @@
                 <li class="breadcrumb-item"><a href="#">dimensions</a></li>
                 <li class="breadcrumb-item"><a href="#">operating system</a></li>
                 <li class="breadcrumb-item"><a href="#">accessories</a></li>
-
-
             </ol>
         </nav>
         <div>
@@ -37,10 +35,10 @@
         <br>
         <div>
             {{#with features}}
-            <ul>
+            <ul class="ps-0">
                 {{#with processor}}
                 <li>
-                    <p><strong>processor</strong></p>
+                    <p><b>processor:</b></p>
 
                     <p>brand: {{brand}}</p>
                     <p>model: {{model}}</p>
@@ -52,7 +50,7 @@
                 <li>
                     {{#with memory}}
 
-                    <p><strong>memory</strong></p>
+                    <p><b>memory:</b></p>
 
                     <p>type: {{type}}</p>
                     <p>size: {{size}}</p>
@@ -62,7 +60,7 @@
                 <li>
                     {{#with storage}}
 
-                    <p><strong>storage</strong></p>
+                    <p><b>storage:</b></p>
 
                     <p>type: {{type}}</p>
                     <p>size: {{size}}</p>
@@ -71,7 +69,7 @@
                 <li>
                     {{#with display}}
 
-                    <p><strong>display</strong></p>
+                    <p><b>display:</b></p>
 
                     <p>size: {{size}}</p>
                     <p>resolution: {{resolution}}</p>
@@ -84,7 +82,7 @@
                 <li>
                     {{#with graphics}}
 
-                    <p><strong>graphics</strong></p>
+                    <p><b>graphics:</b></p>
 
                     <p>brand: {{brand}}</p>
                     <p>model: {{model}}</p>
@@ -92,8 +90,8 @@
                     {{/with}}
                 </li>
                 <li>
-                    <ul>
-                        <p><strong>ports:</strong></p>
+                    <ul class="ps-0">
+                        <p><b>ports:</b></p>
                         {{#each ports}}
                         <li>
                             <p>type: {{type}}</p>
@@ -110,7 +108,7 @@
                 <li>
                     {{#with battery}}
 
-                    <p><strong>battery</strong></p>
+                    <p><b>battery:</b></p>
 
                     <p>type: {{type}}</p>
                     <p>capacity: {{capacity}}</p>
@@ -118,12 +116,12 @@
                     {{/with}}
                 </li>
                 <li>
-                    <p><strong>weight: </strong>{{weight}}</p>
+                    <p><b>weight: </b>{{weight}}</p>
                 </li>
                 <li>
                     {{#with dimensions}}
 
-                    <p><strong>dimensions</strong></p>
+                    <p><b>dimensions:</b></p>
 
                     <p>height: {{height}}</p>
                     <p>width: {{width}}</p>
@@ -131,11 +129,11 @@
                     {{/with}}
                 </li>
                 <li>
-                    <p><strong>operating system: </strong>{{operating_system}}</p>
+                    <p><b>operating system: </b>{{operating_system}}</p>
                 </li>
                 <li>
-                    <ul>
-                        <p><strong>accessories: </strong></p>
+                    <ul class="ps-0">
+                        <p><b>accessories: </b></p>
                         {{#each accessories}}
                         <li>
                             <p>{{name}} ({{price}}) <button type="button"
@@ -148,5 +146,5 @@
                 {{/with}}
             </ul>
         </div>
-    </section>
-</div>
+    </div>
+</main>

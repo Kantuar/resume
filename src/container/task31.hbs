@@ -55,7 +55,6 @@
                 <h2>{{title}}</h2>
             </div>
 
-
             {{#each cards}}
             {{#with picture}}
             <div class="col-5 gy-5 gx-2">
@@ -66,13 +65,12 @@
                         <h5 class="card-title">{{title}}</h5>
                         <p>{{description}}</p>
                         {{#with button}}
-                        <a href="/{{href}}" class="btn btn-primary">{{text}}</a>
+                        <a href="{{href}}" class="btn btn-primary">{{text}}</a>
                     </div>
                 </div>
             </div>
             {{/with}}
             {{/each}}
-
 
             {{/with}}
         </div>
@@ -174,7 +172,6 @@
                     <div class="card-footer text-center">{{footer}}</div>
                 </div>
             </div>
-
             {{/each}}
             {{/with}}
         </div>

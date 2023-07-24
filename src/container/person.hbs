@@ -1,151 +1,137 @@
-<div>
+<main class="p-3">
     {{#with person}}
-    <section>
-        {{> title data='Характеристика' big=true}}
-        <hr>
+    <div>
         <div>
             <h2>
                 {{name}}
             </h2>
         </div>
-        <br>
+
         <div>
             Вік: {{age}}
         </div>
-        <br>
-        <div>
+
+        <div class="py-2">
             Стать: {{gender}}
         </div>
-        <br>
+
         <div>
             {{#with address}}
             Адреса: {{country}}, {{state}}, {{city}}, {{zip}}, {{street}}
             {{/with}}
         </div>
-    </section>
+    </div>
     <hr>
-    <section>
-        {{> title data='Освіта' big=true}}
-        <ul>
+    <div>
+        {{> title data='Освіта' big=false}}
+        <ul class="ps-0">
             {{#each education}}
             <li>
                 Місце навчання: {{university}} (рік завершення - {{graduationYear}})
             </li>
-            <br>
-            <li>
+
+            <li class="py-2">
                 Спеціальність: {{major}}
             </li>
-            <br>
+
             <li>
                 Освітній ступінь: {{degree}}
             </li>
             {{/each}}
         </ul>
-    </section>
+    </div>
     <hr>
-    <section>
-        {{> title data='Досвід роботи' big=true}}
-        <ul>
+    <div>
+        {{> title data='Досвід роботи' big=false}}
+        <ul class="ps-0">
             {{#each workExperience}}
             <li>Компанія: {{company}} ({{year_founded}})</li>
-            <br>
-            <li>Посада: {{title}}</li>
-            <br>
-            <li>Час роботи: {{startDate}} - {{endDate}}</li>
-            <br>
-            <li>Обов'язки: <p>{{responsibilities}}</p>
+
+            <li class="py-2">Посада: {{title}}</li>
+
+            <li>Час роботи: ({{startDate}}) - ({{endDate}})</li>
+
+            <li class="py-2">Обов'язки: {{responsibilities}}</li>
         </ul>
-    </section>
+    </div>
     <hr>
-    <section>
-        {{> title data='Дані про роботодавця та команду' big=true}}
-        <ul>
+    <div>
+        {{> title data='Дані про роботодавця та команду' big=false}}
+        <ul class="ps-0">
             {{#each employees}}
             <li>
-                <div>
-                    <strong>Роботодавець</strong>
+                <div class="pb-2">
+                    <b>Роботодавець:</b>
                 </div>
-                <br>
-                <div>{{name}}</div>
-                <br>
-                <div>{{position}}</div>
-                <br>
-                <div>{{department}}</div>
+                <div>{{name}} / {{position}} / {{department}}</div>
             </li>
             <hr>
             <li>
                 <div>
-                    <strong>Проекти</strong>
+                    <b>Проекти:</b>
                 </div>
-                <br>
-                <div>
-                    {{#each projects}}
-                    <div>
-                        назва: {{name}} - ({{status}})
-                    </div>
-                    <p>
-                        опис: {{description}}
-                    </p>
+
+                {{#each projects}}
+                <div class="py-2">
+                    назва: {{name}} - ({{status}})
+                </div>
+                <p>
+                    опис: {{description}}
+                </p>
             </li>
             <hr>
             <li>
                 <div>
-                    <strong>Команда</strong>
+                    <b>Команда:</b>
                 </div>
-                <br>
+
                 {{#each teams}}
-                <div>
+                <div class="py-2">
                     Назва команди: {{team_name}}
                 </div>
-                <br>
+
                 {{#each team_members}}
                 <div>Учасник: {{name}}</div>
-                <br>
-                <div>Посада: {{title}}</div>
-                <br>
+
+                <div class="py-2">Посада: {{title}}</div>
+
                 <div>Пошта: {{email}}</div>
-                <br>
-                <div>Навички:
+
+                <div class="py-2">Навички:
                     {{#each skills}}
                     {{this}}
                     {{/each}}
                 </div>
+                <hr>
                 <div>
-                    <p><em>Проекти учасника:</em></p>
+                    <div><em>Проекти учасника:</em></div>
                     {{#each projects}}
-            <li>Назва: {{name}}</li>
-            <br>
-            <li>Опис: {{description}}</li>
-            <br>
-            <li>Технології:
-                {{#each technologies}}
-                {{this}}
-                {{/each}}
-            </li>
+                    <div class="py-2">Назва: {{name}}</div>
+
+                    <div>Опис: {{description}}</div>
+
+                    <div class="py-2">Технології:
+                        {{#each technologies}}
+                        {{this}},
+                        {{/each}}
+                    </div>
+
+                    <div>Інші учасники проекту:</div>
+                    {{#each team_members}}
             <li>
-                <p>Інші учасники проекту:</p>
-                {{#each team_members}}
-            <li>
-                <p>{{name}}, {{title}}</p>
+                <div class="py-1">{{name}}, {{title}}</div>
             </li>
             {{/each}}
-            </li>
-</div>
-{{/each}}
-</div>
-{{/each}} <div>
-</div>
-{{/each}}
-{{/each}}
-</div>
-</li>
-</ul>
-</section>
-<section>
-</section>
-{{/each}}
-</ul>
-{{/each}}
-</section>
-{{/with}}
-</div>
+    </div>
+    {{/each}}
+    </div>
+    {{/each}}
+    </div>
+    {{/each}}
+    {{/each}}
+    </div>
+    {{/each}}
+    {{/each}}
+    </section>
+    {{/with}}
+</main>

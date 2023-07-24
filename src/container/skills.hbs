@@ -6,9 +6,9 @@
 <div>
     {{#with main}}
     <main>
-        <section>
-            {{> title data='All skills' big=true}}
-            <ul>
+        <div>
+            {{> title data='All skills' big=false}}
+            <ul class="ps-0">
                 {{#each skills}}
                 <li>
                     {{name}}
@@ -26,10 +26,10 @@
                 </li>
                 {{/each}}
             </ul>
-        </section>
-        <section>
+        </div>
+        <div>
             {{> title data="My hobbies" big=false}}
-            <ol>
+            <ol class="ps-0">
                 {{#each hobbies}}
                 <li>
                     {{name}}
@@ -37,12 +37,7 @@
                 </li>
                 {{/each}}
             </ol>
-        </section>
+        </div>
     </main>
     {{/with}}
 </div>
-
-{{!--
-Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-Адже наш layout/default.hbs має вже структуру HTML
---}}

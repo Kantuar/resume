@@ -1,36 +1,54 @@
-<div>
-    <section>
-        {{> title data='Характеристика' big=true}}
-        <hr>
-        <div>
-            <h2> {{name}}</h2>
+<main>
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+        <a class="navbar-brand" href="#">
+            <h2>{{name}}</h2>
+        </a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading1">Основна інформація</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">Більше</a>
+                <ul class="dropdown-menu">
+                    <a class="nav-link" href="#scrollspyHeading2">Освіта та наукова діяльність</a>
+                    <li><a class="dropdown-item" href="#scrollspyHeading3">Особисте життя та світовий внесок</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+        <div id="scrollspyHeading1">
+            {{> title data="Основна інформація" big=false}}
         </div>
+        <p>
         <div>
             <b>Дата народження:</b> {{birthdate}} ({{birthplace}})
         </div>
-        <br>
-        <div>
+
+        <div class="py-3">
             <b>Дата смерті:</b> {{deathdate}} ({{deathplace}})
         </div>
-        <br>
+
         <div>
             <b>Національність:</b> {{nationality}}
         </div>
-        <br>
-        <div>
+
+        <div class="pt-3">
             <b>Професія:</b> {{occupation}}
         </div>
         <br>
-        <b>Відомий завдяки:</b>
+        <div class="pt-0 pb-2"><b>Відомий завдяки:</b></div>
         <ul>
             {{#each known_for}}
-            <li>{{this}} </li>
+            <li>{{this}}</li>
             {{/each}}
         </ul>
-    </section>
-    <hr>
-    <section>
-        {{> title data='Освіта та наукова діяльність' big=true}}
+        </p>
+        <hr>
+        <div id="scrollspyHeading2">{{> title data="Освіта та наукова діяльність" big=false}}</div>
+        <p>
         <p><b>Науковий ступінь:</b>
             {{education.[0].degree}}</p>
         <p><b>Спеціальність:</b>
@@ -39,115 +57,102 @@
             {{education.[0].institution}} ({{education.[0].year}})</p>
 
         <div>
-            <div>
-                <strong>Визначні публікації</strong>
-            </div>
-            <ul>
+            <b>Визначні публікації</b>
+            <ul class="pt-2">
                 {{#each notable_publications}}
-                <li>{{title}} ({{year}}) - {{publisher}}</li>
+                <li class="pb-1">{{title}} ({{year}}) - {{publisher}}</li>
                 {{/each}}
             </ul>
         </div>
         <div>
-            <div>
-                <strong>Нагороди</strong>
-            </div>
+            <div class="pb-2"><b>Нагороди</b></div>
             <ul>
                 <li>
-                    <p><b>Назва:</b>
-                        {{awards.[0].title}} ({{awards.[0].year}})</p>
+                    <div class="pb-2"><b>Назва:</b>
+                        {{awards.[0].title}} ({{awards.[0].year}})</div>
                 </li>
                 <li>
-                    <p><b>Опис:</b>
-                        {{awards.[0].description}}</p>
+                    <div><b>Опис:</b>
+                        {{awards.[0].description}}</div>
                 </li>
             </ul>
         </div>
         <div>
-            <div>
-                <strong>Головні відкриття</strong>
+            <div class="pb-2">
+                <b>Головні відкриття</b>
             </div>
             <ul>
                 <li>
-                    <p><b>Назва:</b>
-                        {{major_discoveries.[0].title}} ({{major_discoveries.[0].year}})</p>
+                    <div class="pb-2"><b>Назва:</b>
+                        {{major_discoveries.[0].title}} ({{major_discoveries.[0].year}})</div>
                 </li>
                 <li>
-                    <p><b>Опис:</b>
-                        {{major_discoveries.[0].description}}</p>
+                    <div><b>Опис:</b>
+                        {{major_discoveries.[0].description}}</div>
                 </li>
             </ul>
         </div>
-    </section>
+        </p>
+        <hr>
+        <div id="scrollspyHeading3">{{> title data="Особисте життя та світовий внесок" big=false}}</div>
+        <p>
+        <div class="pb-2">
+            <b>Жінки:</b>
+        </div>
+        <ul>
+            {{#each partners}}
+            <li class="pb-1">{{name}} - {{relationship}} ({{years}})</li>
+            {{/each}}
+        </ul>
 
-    <hr>
-    <section>
-        {{> title data='Особисте життя та світовий внесок' big=true}}
-        <div>
-            <div>
-                <strong>Жінки:</strong>
-            </div>
-            <ul>
-                {{#each partners}}
-                <li>{{name}} - {{relationship}} ({{years}})</li>
-                {{/each}}
-            </ul>
+        <div class="pb-2">
+            <b>Надихався...</b>
         </div>
-        <br>
-        <div>
-            <div>
-                <strong>Надихався...</strong>
-            </div>
-            <ul>
-                {{#each influences}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ul>
+        <ul>
+            {{#each influences}}
+            <li class="pb-1">{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <div class="pb-2">
+            <b>Став натхненням для...</b>
         </div>
-        <div>
-            <div>
-                <strong>Став натхненням для...</strong>
-            </div>
-            <ul>
-                {{#each influenced}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ul>
+        <ul>
+            {{#each influenced}}
+            <li class="pb-1">{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <div class="pb-2">
+            <b>Цитати:</b>
         </div>
-        <div>
-            <div>
-                <strong>Цитати:</strong>
-            </div>
-            <ul>
-                {{#each quotes}}
-                <li>
-                    <p>{{this}}</p>
-                </li>
-                {{/each}}
-            </ul>
+        <ul>
+            {{#each quotes}}
+            <li>
+                <div class="pb-1">{{this}}</div>
+            </li>
+            {{/each}}
+        </ul>
+
+        <div class="pb-2">
+            <b>Внески:</b>
         </div>
-        <div>
-            <div>
-                <strong>Внески:</strong>
-            </div>
-            <ul>
-                {{#with contributions}}
-                <li>
-                    <b>Область:</b>
-                    {{title}}
-                </li>
-                <br>
-                <li>
-                    <b>Опис:</b>
-                    {{description}}
-                </li>
-                <br>
-                <li>
-                    <b>Рік:</b>
-                    {{year}}
-                </li>
-                {{/with}}
-            </ul>
-        </div>
-    </section>
-</div>
+        <ul>
+            {{#with contributions}}
+            <li>
+                <b>Область:</b>
+                {{title}}
+            </li>
+            <li class="py-1">
+                <b>Опис:</b>
+                {{description}}
+            </li>
+            <li>
+                <b>Рік:</b>
+                {{year}}
+            </li>
+            {{/with}}
+        </ul>
+        </p>
+    </div>
+</main>

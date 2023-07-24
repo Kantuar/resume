@@ -1,62 +1,69 @@
-<div>
-    <section>
+<main>
+    <div>
         <div>
             <h1>{{name}}</h1>
         </div>
 
-        {{#each users}}
+
         <div>
             <hr>
-            <p>
-            <h3>users:</h3>
-            </p>
-            <p><b>id:</b> {{id}}</p>
-            <p><b>name:</b> {{name}} ({{age}})</p>
-            <p><b>gender:</b> {{gender}}</p>
-            <ul>
-                {{#each friends}}
-                <li>
-                    <button type="button" class="btn btn-primary">friends</button>
-                    <p><b>id:</b> {{id}}</p>
-                    <p><b>name:</b> {{name}} ({{age}})</p>
-                    <p><b>gender:</b> {{gender}}</p>
-                    <ul>
-                        {{#each mutual_friends}}
-                        <li>
-                            <button type="button" class="btn btn-outline-primary">mutual friends</button>
-                            <p><b>id:</b> {{id}}</p>
-                            <p><b>name:</b> {{name}} ({{age}})</p>
-                            <p><b>gender:</b> {{gender}}</p>
-                        </li>
-                        {{/each}}
-                    </ul>
+            <div class="row">
+                {{#each users}}
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h3 class="text-center">users:</h3>
+                            </div>
+                            <div><b>id:</b> {{id}}</div>
+                            <div class="py-1"><b>name:</b> {{name}} ({{age}})</div>
+                            <div><b>gender:</b> {{gender}}</div>
+                        </div>
+                        <div class="card-body">
+                            {{#each friends}}
 
-                    <ul>
-                        {{#each groups}}
-                        <li>
-                            <button type="button" class="btn btn-success">groups</button>
-                            <p><b>id:</b> {{id}}</p>
-                            <p><b>name:</b> {{name}}</p>
-                            <p><b>description:</b> {{description}}</p>
-                            <ul>
-                                {{#each members}}
-                                <li>
-                                    <button type="button" class="btn btn-outline-success">members</button>
-                                    <p><b>id:</b> {{id}}</p>
-                                    <p><b>name:</b> {{name}} ({{age}})</p>
-                                    <p><b>gender:</b> {{gender}}</p>
-                                </li>
-                                {{/each}}
-                            </ul>
-                            </p>
-                        </li>
-                        {{/each}}
-                    </ul>
-                    </p>
-                </li>
-                {{/each}}</p>
-            </ul>
+                            <h5 class="text-center">friends</h5>
+                            <div><b>id:</b> {{id}}</div>
+                            <div><b>name:</b> {{name}} ({{age}})</div>
+                            <div><b>gender:</b> {{gender}}</div>
+
+                            {{#each mutual_friends}}
+
+                            <h5 class="text-center">mutual friends</h5>
+                            <div><b>id:</b> {{id}}</div>
+                            <div><b>name:</b> {{name}} ({{age}})</div>
+                            <div><b>gender:</b> {{gender}}</div>
+
+                            {{/each}}
+                            <hr>
+
+                            {{#each groups}}
+
+                            <h5 class="text-center">groups</h5>
+                            <div><b>id:</b> {{id}}</div>
+                            <div><b>name:</b> {{name}}</div>
+                            <div><b>description:</b> {{description}}</div>
+
+                            {{#each members}}
+
+                            <h5 class="text-center">members</h5>
+                            <div><b>id:</b> {{id}}</div>
+                            <div><b>name:</b> {{name}} ({{age}})</div>
+                            <div><b>gender:</b> {{gender}}</div>
+
+                            {{/each}}
+                            <hr>
+
+                            {{/each}}
+
+                            {{/each}}
+
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
         </div>
-        {{/each}}
-    </section>
-</div>
+
+    </div>
+</main>
