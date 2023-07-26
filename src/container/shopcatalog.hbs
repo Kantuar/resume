@@ -1,13 +1,5 @@
 <main>
-    <div class="pt-0">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                {{#each breadcrumb}}
-                <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
-                {{/each}}
-            </ol>
-        </nav>
-    </div>
+    {{> breadcrump}}
     <div>
         <h2>{{header}}</h2>
 
@@ -26,7 +18,7 @@
     </div>
     <div class="row">
         {{#with filterBlock}}
-        <div class="col-4 px-0 pe-1">
+        <div class="col-4 px-0 pe-1 pb-3">
             <div class="card">
                 <div class="card-body">
                     {{#with sellers}}
@@ -89,22 +81,8 @@
 
         {{> catalogItem}}
 
-        <div>
-            {{#with service}}
-            <div class="card text-bg-success p-2 mt-5">
-                <h2 class="text-center">{{title}}</h2>
-                <p class="text-center">{{description}}</p>
+        {{> shopaction}}
 
-                {{#each buttons}}
-                <a href="{{link}}">
-                    <div class="pb-2 ps-1 text-center">
-                        <button class="btn btn btn-primary">{{text}}</button>
-                    </div>
-                </a>
-                {{/each}}
-            </div>
-            {{/with}}
-        </div>
         <div class="pt-4">
             <hr>
         </div>
