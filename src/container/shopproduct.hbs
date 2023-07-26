@@ -1,33 +1,8 @@
 <main class="col-12">
-    <div>
-        {{#with navigation}}
-        <div class="card">
-            <div class="nav">
-                {{#each links}}
-                <div class="nav-item py-2">
-                    <a href="{{href}}" class="nav-link active">{{text}}</a>
-                </div>
-                {{/each}}
-            </div>
-        </div>
-        {{/with}}
-    </div>
-    <div>
-        <ol class="breadcrumb my-4 ms-3">
-            {{#each breadcrumb}}
-            <li class="breadcrumb-item">
-                <a href="{{url}}">{{name}}</a>
-            </li>
-            {{/each}}
-        </ol>
-    </div>
+
+    {{> breadcrump}}
 
     <div class="row">
-
-    </div>
-
-    <div class="row">
-
         {{#with productData}}
         <div class="col-6">
             <img class="card-img-top pt-2 pb-4" src="{{img}}">
@@ -104,9 +79,7 @@
 
             {{/with}}
         </div>
-
     </div>
-
 
     {{#with productData}}
     <div class="card mb-5">
@@ -125,58 +98,20 @@
     <hr>
     <div class="row">
         {{#with goodsOtherBlock}}
-
         <h2 class="text-center mt-5">{{title}}</h2>
 
         {{#each cards}}
         <div class="col-4 my-3 gx-2 py-2">
-            <div class="card">
-                <img class="card-img-top" src="{{image}}">
-                <div class="card-body">
-                    <div class="card-title">
-                        {{title}}
-                        {{#if isHot}}
-                        <span class="badge text-bg-warning rounded-pill">Hot</span>
-                        {{/if}}
-                        {{#if isNew}}
-                        <span class="badge text-bg-primary rounded-pill ">New</span>
-                        {{/if}}
-                    </div>
-                    <p>{{description}}</p>
-                </div>
-            </div>
+            {{> shopcard}}
         </div>
         {{/each}}
         {{/with}}
-
     </div>
-    <hr>
-    <div class="card text-bg-success my-5 p-2">
-        {{#with service}}
-        <h2 class="text-center">{{title}}</h2>
-        <p class="text-center">{{description}}</p>
-
-        {{#each buttons}}
-        <a href="{{link}}">
-            <div class="pb-2 ps-1 text-center">
-                <button class="btn btn btn-primary">{{text}}</button>
-            </div>
-        </a>
-        {{/each}}
-        {{/with}}
+    <div class="py-2">
+        <hr>
     </div>
-    <hr>
-    <div class="row">
-        {{#each footer}}
-
-        <div class="nav col-2">
-            {{#each this}}
-            <div class="nav-item">
-                <a href="{{link}}" class="nav-link active">
-                    {{text}}</a>
-            </div>
-            {{/each}}
-        </div>
-        {{/each}}
+    {{> shopaction}}
+    <div class="py-2">
+        <hr>
     </div>
 </main>
