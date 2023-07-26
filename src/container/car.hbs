@@ -1,252 +1,243 @@
-<div>
-    <section>
-        <h1>{{color}} {{make}} {{model}} ({{year}})</h1>
+<main>
+    <div>
+        <h1 class="text-center">{{color}} {{make}} {{model}} ({{year}})</h1>
         <hr>
-    </section>
-    <section>
-        <div>
-            <h2><mark>features</mark></h2>
-        </div>
-        <hr>
-        {{#with features}}
-        <div>
-            <button type="button" class="btn btn-warning">interior</button>
-        </div>
-        <br>
-        <div>
-            {{#with interior}}
-            <ul>
-                {{#with seats}}
-                <li>
-                    <p><strong>seats:</strong></p>
+    </div>
+    <div class="mb-3">
+        <div class="display-4 text-center">features</div>
+    </div>
 
-                    <p>material: {{material}}</p>
-                    <p>color: {{color}}</p>
-                    <p>heated:
-                        {{#if heated}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}</p>
-                    <p>ventilated:
-                        {{#if ventilated}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}</p>
-                </li>
-                {{/with}}
-            </ul>
-            <ul>
-                {{#with dashboard}}
-                <li>
-                    <p><b>dashboard:</b></p>
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
 
-                    <p>material: {{material}}</p>
-                    <p>color: {{color}}</p>
-                    <p>display:
+                    {{#with features}}
+                    <div>
+                        <div class="py-1">
+                            <h4 class="text-center">interior</h4>
+                        </div>
+                        <br>
+                        <div>
+                            {{#with interior}}
+                            <ul>
+                                {{#with seats}}
+                                <li>
+                                    <div><b>seats:</b></div>
+                                    <div class="py-2">material: {{material}}</div>
+                                    <div>color: {{color}}</div>
+                                    <div class="py-2">heated:
+                                        {{#if heated}} <em>в наявності</em>{{/if}}</div>
+                                    <div>ventilated:
+                                        {{#if ventilated}} <em>в наявності</em>{{/if}}</div>
+                                </li>
+                                {{/with}}
+                            </ul>
+                            <ul>
+                                {{#with dashboard}}
+                                <li>
+                                    <div><b>dashboard:</b></div>
+                                    <div class="py-2">material: {{material}}</div>
+                                    <div>color: {{color}}</div>
+                                    <div class="py-2">display:
+                                        <ul>
+                                            {{#with display}}
+                                            <li>{{type}},</li>
+                                            <li class="py-2">{{size}},</li>
+                                            <li>{{resolution}},</li>
+                                            <li class="py-2">{{#if touchscreen}} <em>в наявності</em>{{/if}}</li>
+                                            {{/with}}
+                                        </ul>
+                                </li>
+                                {{/with}}
+                            </ul>
+                            <ul>
+                                {{#with audio}}
+                                <li>
+                                    <div><b>audio:</b></div>
+                                    <div class="py-2">system: {{system}}</div>
+                                    <div>speakers: {{speakers}}</div>
+                                    <div class="py-2">subwoofer:
+                                        {{#if subwoofer}} <em>в наявності</em>{{/if}}</div>
+                                    <div>bluetooth:
+                                        {{#if bluetooth}} <em>в наявності</em>{{/if}}</div>
+                                    <div class="py-2">USB:
+                                        {{#if USB}} <em>в наявності</em>{{/if}}</div>
+                                </li>
+                                {{/with}}
+                            </ul>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+
+                    <div>
+                        <h4 class="text-center">exterior</h4>
+                    </div>
+                    <br>
+                    {{#with exterior}}
                     <ul>
-                        {{#with display}}
-                        <li>{{type}},</li>
-                        <li>{{size}},</li>
-                        <li>{{resolution}},</li>
-                        <li>{{#if touchscreen}} <em>в наявності</em>
-                            {{else}} <em>немає в наявності</em>
-                            {{/if}}</li>
+                        {{#with wheels}}
+                        <li>
+                            <div><b>wheels:</b></div>
+                            <div class="py-2">size: {{size}}</div>
+                            <div>type: {{type}}</div>
+                            <div class="py-2">color: {{color}}</div>
+                        </li>
                         {{/with}}
                     </ul>
-                </li>
-                {{/with}}
-            </ul>
-            <ul>
-                {{#with audio}}
-                <li>
-                    <p><b>audio:</b></p>
+                    <ul>
+                        {{#with headlights}}
+                        <li>
+                            <div><b>headlights:</b></div>
+                            <div class="py-2">type: {{type}}</div>
+                            <div>brightness: {{brightness}}</div>
+                            <div class="py-2">automatic:
+                                {{#if automatic}} <em>в наявності</em>
+                                {{else}} <em>немає в наявності</em>
+                                {{/if}}
+                            </div>
+                        </li>
+                        {{/with}}
+                    </ul>
+                    <ul>
+                        {{#with sunroof}}
+                        <li>
+                            <div><b>sunroof:</b></div>
 
-                    <p>system: {{system}}</p>
-                    <p>speakers: {{speakers}}</p>
-                    <p>subwoofer:
-                        {{#if subwoofer}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}</p>
-                    <p>bluetooth:
-                        {{#if bluetooth}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}</p>
-                    <p>USB:
-                        {{#if USB}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}</p>
-                </li>
+                            <div>type: {{type}}</div>
+                            <div>size: {{size}}</div>
+                            <div>automatic:
+                                {{#if automatic}} <em>в наявності</em>
+                                {{else}} <em>немає в наявності</em>
+                                {{/if}}
+                            </div>
+                        </li>
+                        {{/with}}
+                    </ul>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+
+                    <div>
+                        <h4 class="text-center">safety</h4>
+                    </div>
+                    <br>
+                    {{#with safety}}
+                    <ul>
+                        {{#with airbags}}
+                        <li>
+                            <div><b>airbags:</b></div>
+
+                            <div class="py-1">front: {{front}}</div>
+                            <div>side: {{side}}</div>
+                            <div class="py-1">knee: {{knee}}</div>
+                            <div>rear: {{rear}}</div>
+                        </li>
+                        {{/with}}
+                    </ul>
+                    <ul>
+                        {{#with assistance}}
+                        <li>
+                            <div><strong>assistance:</strong></div>
+
+                            <div class="py-2">blind spot monitoring:
+                                {{#if blind_spot_monitoring}} <em>в наявності</em>
+                                {{else}} <em>немає в наявності</em>
+                                {{/if}}
+                            </div>
+                            <div>rear cross traffic alert:
+                                {{#if rear_cross_traffic_alert}} <em>в наявності</em>
+                                {{else}} <em>немає в наявності</em>
+                                {{/if}}
+                            </div>
+                            <div class="py-2">lane departure warning:
+                                {{#if lane_departure_warning}} <em>в наявності</em>{{/if}}
+                            </div>
+                            <div>adaptive cruise control:
+                                {{#if adaptive_cruise_control}} <em>в наявності</em>{{/if}}
+                            </div>
+                            <div class="py-2 ">collision warning:
+                                {{#if collision_warning}} <em>в наявності</em>{{/if}}
+                            </div>
+                        </li>
+                        {{/with}}
+                    </ul>
+                    {{/with}}
+                </div>
                 {{/with}}
-            </ul>
-            {{/with}}
+
+            </div>
+        </div>
+        <div class="my-1">
+            <hr>
         </div>
         <div>
             <div>
-                <button type="button" class="btn btn-warning">exterior</button>
+                <div class="display-4 pb-4 text-center">engine</div>
             </div>
-            <br>
-            {{#with exterior}}
-            <ul>
-                {{#with wheels}}
-                <li>
-                    <p><strong>wheels:</strong></p>
 
-                    <p>size: {{size}}</p>
-                    <p>type: {{type}}</p>
-                    <p>color: {{color}}</p>
-                </li>
-                {{/with}}
-            </ul>
-            <ul>
-                {{#with headlights}}
-                <li>
-                    <p><strong>headlights:</strong></p>
+            <div class="mb-3">
+                {{#with engine}}
 
-                    <p>type: {{type}}</p>
-                    <p>brightness: {{brightness}}</p>
-                    <p>automatic:
-                        {{#if automatic}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}
-                    </p>
-                </li>
-                {{/with}}
-            </ul>
-            <ul>
-                {{#with sunroof}}
-                <li>
-                    <p><strong>sunroof:</strong></p>
-
-                    <p>type: {{type}}</p>
-                    <p>size: {{size}}</p>
-                    <p>automatic:
-                        {{#if automatic}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}
-                    </p>
-                </li>
-                {{/with}}
-            </ul>
-            {{/with}}
-        </div>
-        <div>
-            <div>
-                <button type="button" class="btn btn-warning">safety</button>
-            </div>
-            <br>
-            {{#with safety}}
-            <ul>
-                {{#with airbags}}
-                <li>
-                    <p><strong>airbags:</strong></p>
-
-                    <p>front: {{front}}</p>
-                    <p>side: {{side}}</p>
-                    <p>knee: {{knee}}</p>
-                    <p>rear: {{rear}}</p>
-                </li>
-                {{/with}}
-            </ul>
-            <ul>
-                {{#with assistance}}
-                <li>
-                    <p><strong>assistance:</strong></p>
-
-                    <p>blind spot monitoring:
-                        {{#if blind_spot_monitoring}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}
-                    </p>
-                    <p>rear cross traffic alert:
-                        {{#if rear_cross_traffic_alert}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}
-                    </p>
-                    <p>lane departure warning:
-                        {{#if lane_departure_warning}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}
-                    </p>
-                    <p>adaptive cruise control:
-                        {{#if adaptive_cruise_control}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}
-                    </p>
-                    <p>collision warning:
-                        {{#if collision_warning}} <em>в наявності</em>
-                        {{else}} <em>немає в наявності</em>
-                        {{/if}}
-                    </p>
-                </li>
-                {{/with}}
-            </ul>
-            {{/with}}
-        </div>
-        {{/with}}
-    </section>
-    <hr>
-    <section>
-        <div>
-            <h2><mark>engine</mark></h2>
-        </div>
-        <hr>
-        <div>
-            {{#with engine}}
-
-            <p>type: {{type}}</p>
-            <p>displacement: {{displacement}}</p>
-            <p>horsepower: {{horsepower}}</p>
-            <p>torque: {{torque}}</p>
-            <p>torque:
+                <div>type: {{type}}</div>
+                <div class="py-2">displacement: {{displacement}}</div>
+                <div>horsepower: {{horsepower}}</div>
                 {{#with transmission}}
-            <p>type: {{type}}</p>
-            <p>gears: {{gears}}</p>
-            {{/with}}</p>
-
-            {{/with}}
-
-        </div>
-    </section>
-    <hr>
-    <section>
-        <div>
-            <h2><mark>fuel economy</mark></h2>
-        </div>
-        <hr>
-        <div>
-            {{#with fuel_economy}}
-            <p>city: {{city}}</p>
-            <p>highway: {{highway}}</p>
-            <p>combined: {{combined}}</p>
-            {{/with}}
-        </div>
-    </section>
-    <hr>
-    <section>
-        <div>
-            <h2><mark>price</mark></h2>
-        </div>
-        <hr>
-        <div>
-            {{#with price}}
-            <p>base: {{base}}</p>
-            <p>destination: {{destination}}</p>
-            <p>options:
-            <ul>
-                {{#with options}}
-                <li>
-                    <p>navigation: {{navigation}}</p>
-                </li>
-                <li>
-                    <p>moonroof: {{moonroof}}</p>
-                </li>
-                <li>
-                    <p>premium paint: {{premium_paint}}</p>
-                </li>
-                </li>
+                <div class="py-2">torque: {{../torque}} / {{type}} / {{gears}} gears</div>
                 {{/with}}
-            </ul>
-            </p>
-            <p><strong>total: {{total}}</strong></p>
-            {{/with}}
+                {{/with}}
+            </div>
         </div>
-    </section>
-</div>
+        <hr>
+        <div>
+            <div class="mb-3">
+                <div class="display-4 text-center">fuel economy</div>
+            </div>
+            <div class="mb-3">
+                {{#with fuel_economy}}
+                <div>city: {{city}}</div>
+                <div class="py-2">highway: {{highway}}</div>
+                <div>combined: {{combined}}</div>
+                {{/with}}
+            </div>
+        </div>
+        <hr>
+        <div>
+            <div class="mb-3">
+                <div class="display-4 text-center">price</div>
+            </div>
+            <div>
+                {{#with price}}
+                <div>base: {{base}}</div>
+                <div class="py-2">destination: {{destination}}</div>
+                <div class="pb-3">options:
+                    <ul>
+                        {{#with options}}
+                        <li>
+                            <div>navigation: {{navigation}}</div>
+                        </li>
+                        <li>
+                            <div class="py-2">moonroof: {{moonroof}}</div>
+                        </li>
+                        <li>
+                            <div>premium paint: {{premium_paint}}</div>
+                        </li>
+                        </li>
+                        {{/with}}
+                    </ul>
+                    </p>
+                    <h3>total: {{total}}</h3>
+                    {{/with}}
+                </div>
+            </div>
+</main>

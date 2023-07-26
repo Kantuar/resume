@@ -1,4 +1,4 @@
-<div>
+<main>
     <div>
         <h2>{{name}}</h2>
     </div>
@@ -29,7 +29,7 @@
         <button type="button" class="btn btn-dark">Types</button>
         <ul>
             {{#each types}}
-            <li>
+            <li class="py-1">
                 {{this}}
             </li>
             {{/each}}
@@ -39,27 +39,27 @@
         <button type="button" class="btn btn-dark">Syntax</button>
         <ul>
             {{#with syntax}}
-            <li> <b><em>variables:</em></b>
+            <li class="py-1"> <b><em>variables:</em></b>
                 {{#each variables}}
                 {{this}},
                 {{/each}}
             </li>
-            <li> <b><em>functions:</em></b>
+            <li class="py-1"> <b><em>functions:</em></b>
                 {{#each functions}}
                 {{this}}
                 {{/each}}
             </li>
-            <li><b><em>conditionals:</em></b>
+            <li class="py-1"><b><em>conditionals:</em></b>
                 {{#each conditionals}}
                 {{this}},
                 {{/each}}
             </li>
-            <li><b><em>loops:</em></b>
+            <li class="py-1"><b><em>loops:</em></b>
                 {{#each loops}}
                 {{this}},
                 {{/each}}
             </li>
-            <li><b><em>classes:</em></b>
+            <li class="py-1"><b><em>classes:</em></b>
                 {{#each classes}}
                 {{this}}
                 {{/each}}
@@ -70,29 +70,29 @@
     <div> <button type="button" class="btn btn-dark">Features</button>
         <ul>
             {{#each features}}
-            <li>{{this}}</li>
+            <li class="py-1">{{this}}</li>
             {{/each}}
         </ul>
     </div>
     <div> <button type="button" class="btn btn-dark">Libraries</button>
         <ul>
             {{#each libraries}}
-            <li>{{this}}</li>
+            <li class="py-1">{{this}}</li>
             {{/each}}
         </ul>
     </div>
     <div> <button type="button" class="btn btn-dark">Tools</button>
         <ul>
             {{#each tools}}
-            <li>{{this}}</li>
+            <li class="py-1">{{this}}</li>
             {{/each}}
         </ul>
     </div>
     <div> <button type="button" class="btn btn-dark">Community</button>
         <ul>
             {{#each community}}
-            <li>{{name}}, {{type}}</li>
+            <li class="py-1">{{name}}, {{type}}</li>
             {{/each}}
         </ul>
     </div>
-</div>
+</main>
